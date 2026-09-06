@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "rail": "Clinical AI",
+    "poc_title": "Clinical AI Diagnostics Adoption Monitor",
+    "sources": [
+      "WHO — Ethics and Governance of Artificial Intelligence for Health",
+      "Gulf digital-health transformation reports (national digital-health strategies, UAE/KSA/Qatar)",
+      "FDA AI/ML-Enabled Medical Device List",
+      "EU CE-Mark (MDR) diagnostic device registry"
+    ],
+    "note": "All facility names are real institutions used for illustrative placement. Tool names, deployment status, concordance figures and time-to-report metrics are synthetic mock data."
+  },
+  "facilities": [
+    { "id": "f1",  "name": "Cleveland Clinic Abu Dhabi",        "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4539, "lon": 54.3773, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": null } },
+    { "id": "f2",  "name": "Sheikh Khalifa Medical City",       "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4691, "lon": 54.3838, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": "TriageNet" } },
+    { "id": "f3",  "name": "Mediclinic City Hospital",          "country": "UAE",          "city": "Dubai",     "lat": 25.2285, "lon": 55.3273, "deployments": { "radiology": "Nexus Rad", "pathology": "PathLens", "triage": "TriageNet" } },
+    { "id": "f4",  "name": "NMC Royal Hospital",                "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4830, "lon": 54.3550, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": null } },
+    { "id": "f5",  "name": "King Faisal Specialist Hospital",   "country": "Saudi Arabia", "city": "Riyadh",    "lat": 24.6877, "lon": 46.7219, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": "TriageNet" } },
+    { "id": "f6",  "name": "Dr. Sulaiman Al Habib Hospital",    "country": "Saudi Arabia", "city": "Riyadh",    "lat": 24.7020, "lon": 46.6840, "deployments": { "radiology": "Nexus Rad", "pathology": "PathLens", "triage": null } },
+    { "id": "f7",  "name": "King Abdulaziz Medical City",       "country": "Saudi Arabia", "city": "Jeddah",    "lat": 21.5000, "lon": 39.2000, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": "TriageNet" } },
+    { "id": "f8",  "name": "Hamad Medical Corporation",         "country": "Qatar",        "city": "Doha",      "lat": 25.2919, "lon": 51.5346, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": "TriageNet" } },
+    { "id": "f9",  "name": "Sidra Medicine",                    "country": "Qatar",        "city": "Doha",      "lat": 25.3200, "lon": 51.4400, "deployments": { "radiology": "Nexus Rad", "pathology": null, "triage": "TriageNet" } },
+    { "id": "f10", "name": "Salmaniya Medical Complex",         "country": "Bahrain",      "city": "Manama",    "lat": 26.2225, "lon": 50.5975, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": null } },
+    { "id": "f11", "name": "Ibn Sina Hospital",                 "country": "Kuwait",       "city": "Kuwait City","lat": 29.3697, "lon": 47.9783, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": null } },
+    { "id": "f12", "name": "Sultan Qaboos University Hospital", "country": "Oman",         "city": "Muscat",    "lat": 23.5931, "lon": 58.1704, "deployments": { "radiology": "Nexus Rad", "pathology": "PathLens", "triage": "TriageNet" } }
+  ],
+  "adoption_trend": [
+    { "month": "Jan", "radiology": 18, "pathology": 6,  "triage": 4  },
+    { "month": "Feb", "radiology": 22, "pathology": 8,  "triage": 5  },
+    { "month": "Mar", "radiology": 27, "pathology": 10, "triage": 7  },
+    { "month": "Apr", "radiology": 33, "pathology": 13, "triage": 9  },
+    { "month": "May", "radiology": 39, "pathology": 17, "triage": 12 },
+    { "month": "Jun", "radiology": 46, "pathology": 21, "triage": 16 },
+    { "month": "Jul", "radiology": 52, "pathology": 26, "triage": 21 },
+    { "month": "Aug", "radiology": 58, "pathology": 31, "triage": 27 },
+    { "month": "Sep", "radiology": 64, "pathology": 36, "triage": 33 },
+    { "month": "Oct", "radiology": 69, "pathology": 41, "triage": 39 },
+    { "month": "Nov", "radiology": 74, "pathology": 46, "triage": 45 },
+    { "month": "Dec", "radiology": 79, "pathology": 51, "triage": 51 }
+  ],
+  "concordance": [
+    { "use_case": "radiology", "ai": 94.2, "human": 96.8, "n": 41820 },
+    { "use_case": "pathology", "ai": 91.6, "human": 95.9, "n": 12340 },
+    { "use_case": "triage",    "ai": 88.3, "human": 93.1, "n": 27110 }
+  ],
+  "time_to_report": {
+    "radiology": { "baseline_min": 52, "assisted_min": 19 },
+    "pathology": { "baseline_min": 96, "assisted_min": 44 },
+    "triage":    { "baseline_min": 14, "assisted_min": 4  }
+  }
+}

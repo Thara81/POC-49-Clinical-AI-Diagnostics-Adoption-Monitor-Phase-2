@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Clinical AI Diagnostics Adoption Monitoring Dashboard — Visual DNA
+   Deep midnight teal-charcoal base, luminance < 10%, tinted for the
+   clinical/medical-monitor register rather than generic obsidian black. */
+:root {
+  --ci-bg: #071a20;
+  --ci-surface: #0d242b;
+  --ci-border: #17323b;
+  --ci-teal: #2dd4bf;
+  --ci-cyan: #38bdf8;
+  --ci-amber: #f59e0b;
+  --ci-indigo: #818cf8;
+}
+
+html,
+body {
+  background: var(--ci-bg);
+  color: #e6edf3;
+  font-family: "Inter", system-ui, sans-serif;
+  letter-spacing: -0.01em;
+  overscroll-behavior: none;
+}
+
+.rr-card {
+  background: rgba(13, 36, 43, 0.72);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--ci-border);
+  border-radius: 10px;
+}
+
+.rr-glow {
+  box-shadow: 0 0 0 0.5px rgba(45, 212, 191, 0.9), 0 0 14px rgba(45, 212, 191, 0.22);
+}
+
+.rr-mono {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Leaflet dark-mode tile filter, tinted toward the clinical teal-charcoal base */
+.rr-leaflet-dark .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(175deg) brightness(0.82) contrast(0.95) saturate(0.55);
+}
+.rr-leaflet-dark .leaflet-marker-pane,
+.rr-leaflet-dark .leaflet-popup-pane {
+  filter: none;
+}
+.rr-leaflet-dark .leaflet-control-attribution {
+  background: rgba(7, 26, 32, 0.7) !important;
+  color: #7e97a0 !important;
+}
+.rr-leaflet-dark .leaflet-control-attribution a {
+  color: #a8c5cc !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ci-border);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

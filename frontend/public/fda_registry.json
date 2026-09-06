@@ -1,0 +1,27 @@
+{
+  "source": {
+    "name": "FDA Artificial Intelligence and Machine Learning (AI/ML)-Enabled Medical Devices List",
+    "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices",
+    "publisher": "U.S. Food and Drug Administration, Digital Health Center of Excellence",
+    "snapshot_note": "This is a curated, representative snapshot of real FDA-cleared AI/ML diagnostic device manufacturers and product lines, compiled for reference. The FDA's full list runs to 1,500+ entries and is updated periodically — for the authoritative, current list, always check the source URL above. Clearance pathway is typically 510(k) unless noted; exact submission numbers and clearance dates should be verified directly on FDA's site before being cited as fact.",
+    "as_of": "early 2026"
+  },
+  "devices": [
+    { "manufacturer": "Aidoc Medical", "product_line": "BriefCase", "specialty": "radiology", "modality": "CT triage / large-vessel occlusion, ICH, PE detection" },
+    { "manufacturer": "Viz.ai", "product_line": "Viz LVO / Viz CTP", "specialty": "radiology", "modality": "CT stroke triage" },
+    { "manufacturer": "Lunit", "product_line": "INSIGHT CXR / INSIGHT DBT", "specialty": "radiology", "modality": "Chest X-ray / mammography" },
+    { "manufacturer": "GE HealthCare", "product_line": "Critical Care Suite", "specialty": "radiology", "modality": "Chest X-ray triage (pneumothorax, ETT placement)" },
+    { "manufacturer": "Siemens Healthineers", "product_line": "AI-Rad Companion", "specialty": "radiology", "modality": "CT/MR image analysis suite" },
+    { "manufacturer": "Philips", "product_line": "IntelliSite / AI CT/MR portfolio", "specialty": "radiology", "modality": "Cross-sectional imaging analysis" },
+    { "manufacturer": "Canon Medical Systems", "product_line": "Advanced intelligent Clear-IQ Engine (AiCE)", "specialty": "radiology", "modality": "MR/CT image reconstruction" },
+    { "manufacturer": "Qure.ai", "product_line": "qER / qXR", "specialty": "radiology", "modality": "Head CT / chest X-ray triage" },
+    { "manufacturer": "iCAD", "product_line": "ProFound AI", "specialty": "radiology", "modality": "Mammography / breast density" },
+    { "manufacturer": "HeartFlow", "product_line": "FFRct Analysis", "specialty": "radiology", "modality": "Coronary CT angiography" },
+    { "manufacturer": "Cleerly", "product_line": "Cleerly Labs", "specialty": "radiology", "modality": "Coronary plaque quantification (cardiac CT)" },
+    { "manufacturer": "Caption Health (GE HealthCare)", "product_line": "Caption AI", "specialty": "triage", "modality": "Point-of-care cardiac ultrasound guidance" },
+    { "manufacturer": "Butterfly Network", "product_line": "Butterfly iQ / ImageMatch", "specialty": "triage", "modality": "Point-of-care ultrasound AI guidance" },
+    { "manufacturer": "PathAI", "product_line": "AISight", "specialty": "pathology", "modality": "Digital pathology image analysis platform" },
+    { "manufacturer": "Paige", "product_line": "Paige Prostate", "specialty": "pathology", "modality": "Prostate cancer detection, digital pathology" },
+    { "manufacturer": "Proscia", "product_line": "Concentriq", "specialty": "pathology", "modality": "Digital pathology workflow / image management" }
+  ]
+}

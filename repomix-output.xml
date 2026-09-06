@@ -1,0 +1,1948 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+backend/
+  app/
+    data/
+      fda_registery.json
+      mock_data.json
+    routers/
+      __init__.py
+      rail.py
+    __init__.py
+    data_store.py
+    fda_registery.py
+    fda_registry.py
+    main.py
+  .env.example
+  requirements.txt
+frontend/
+  app/
+    globals.css
+    layout.tsx
+    page.tsx
+  components/
+    ui/
+      button.tsx
+      card.tsx
+    AdoptionTrendChart.tsx
+    ConcordanceChart.tsx
+    CoverageMatrix.tsx
+    FdaRegistryPanel.tsx
+    Header.tsx
+    IntelligencePanel.tsx
+    MapPanel.tsx
+    Sidebar.tsx
+    TTRGauges.tsx
+  lib/
+    api.ts
+    types.ts
+  public/
+    mock_data.json
+  types/
+    css.d.ts
+  .env.local.example
+  next-env.d.ts
+  next.config.js
+  package.json
+  postcss.config.js
+  tailwind.config.ts
+  tsconfig.json
+.gitignore
+README.md
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="backend/app/data/fda_registery.json">
+{
+  "source": {
+    "name": "FDA Artificial Intelligence and Machine Learning (AI/ML)-Enabled Medical Devices List",
+    "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices",
+    "publisher": "U.S. Food and Drug Administration, Digital Health Center of Excellence",
+    "snapshot_note": "This is a curated, representative snapshot of real FDA-cleared AI/ML diagnostic device manufacturers and product lines, compiled for reference. The FDA's full list runs to 1,500+ entries and is updated periodically — for the authoritative, current list, always check the source URL above. Clearance pathway is typically 510(k) unless noted; exact submission numbers and clearance dates should be verified directly on FDA's site before being cited as fact.",
+    "as_of": "early 2026"
+  },
+  "devices": [
+    { "manufacturer": "Aidoc Medical", "product_line": "BriefCase", "specialty": "radiology", "modality": "CT triage / large-vessel occlusion, ICH, PE detection" },
+    { "manufacturer": "Viz.ai", "product_line": "Viz LVO / Viz CTP", "specialty": "radiology", "modality": "CT stroke triage" },
+    { "manufacturer": "Lunit", "product_line": "INSIGHT CXR / INSIGHT DBT", "specialty": "radiology", "modality": "Chest X-ray / mammography" },
+    { "manufacturer": "GE HealthCare", "product_line": "Critical Care Suite", "specialty": "radiology", "modality": "Chest X-ray triage (pneumothorax, ETT placement)" },
+    { "manufacturer": "Siemens Healthineers", "product_line": "AI-Rad Companion", "specialty": "radiology", "modality": "CT/MR image analysis suite" },
+    { "manufacturer": "Philips", "product_line": "IntelliSite / AI CT/MR portfolio", "specialty": "radiology", "modality": "Cross-sectional imaging analysis" },
+    { "manufacturer": "Canon Medical Systems", "product_line": "Advanced intelligent Clear-IQ Engine (AiCE)", "specialty": "radiology", "modality": "MR/CT image reconstruction" },
+    { "manufacturer": "Qure.ai", "product_line": "qER / qXR", "specialty": "radiology", "modality": "Head CT / chest X-ray triage" },
+    { "manufacturer": "iCAD", "product_line": "ProFound AI", "specialty": "radiology", "modality": "Mammography / breast density" },
+    { "manufacturer": "HeartFlow", "product_line": "FFRct Analysis", "specialty": "radiology", "modality": "Coronary CT angiography" },
+    { "manufacturer": "Cleerly", "product_line": "Cleerly Labs", "specialty": "radiology", "modality": "Coronary plaque quantification (cardiac CT)" },
+    { "manufacturer": "Caption Health (GE HealthCare)", "product_line": "Caption AI", "specialty": "triage", "modality": "Point-of-care cardiac ultrasound guidance" },
+    { "manufacturer": "Butterfly Network", "product_line": "Butterfly iQ / ImageMatch", "specialty": "triage", "modality": "Point-of-care ultrasound AI guidance" },
+    { "manufacturer": "PathAI", "product_line": "AISight", "specialty": "pathology", "modality": "Digital pathology image analysis platform" },
+    { "manufacturer": "Paige", "product_line": "Paige Prostate", "specialty": "pathology", "modality": "Prostate cancer detection, digital pathology" },
+    { "manufacturer": "Proscia", "product_line": "Concentriq", "specialty": "pathology", "modality": "Digital pathology workflow / image management" }
+  ]
+}
+</file>
+
+<file path="backend/app/data/mock_data.json">
+{
+  "meta": {
+    "rail": "Clinical AI",
+    "poc_title": "Clinical AI Diagnostics Adoption Monitor",
+    "sources": [
+      "WHO — Ethics and Governance of Artificial Intelligence for Health",
+      "Gulf digital-health transformation reports (national digital-health strategies, UAE/KSA/Qatar)",
+      "FDA AI/ML-Enabled Medical Device List",
+      "EU CE-Mark (MDR) diagnostic device registry"
+    ],
+    "note": "All facility names are real institutions used for illustrative placement. Tool names, deployment status, concordance figures and time-to-report metrics are synthetic mock data."
+  },
+  "facilities": [
+    { "id": "f1",  "name": "Cleveland Clinic Abu Dhabi",        "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4539, "lon": 54.3773, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": null } },
+    { "id": "f2",  "name": "Sheikh Khalifa Medical City",       "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4691, "lon": 54.3838, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": "TriageNet" } },
+    { "id": "f3",  "name": "Mediclinic City Hospital",          "country": "UAE",          "city": "Dubai",     "lat": 25.2285, "lon": 55.3273, "deployments": { "radiology": "Nexus Rad", "pathology": "PathLens", "triage": "TriageNet" } },
+    { "id": "f4",  "name": "NMC Royal Hospital",                "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4830, "lon": 54.3550, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": null } },
+    { "id": "f5",  "name": "King Faisal Specialist Hospital",   "country": "Saudi Arabia", "city": "Riyadh",    "lat": 24.6877, "lon": 46.7219, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": "TriageNet" } },
+    { "id": "f6",  "name": "Dr. Sulaiman Al Habib Hospital",    "country": "Saudi Arabia", "city": "Riyadh",    "lat": 24.7020, "lon": 46.6840, "deployments": { "radiology": "Nexus Rad", "pathology": "PathLens", "triage": null } },
+    { "id": "f7",  "name": "King Abdulaziz Medical City",       "country": "Saudi Arabia", "city": "Jeddah",    "lat": 21.5000, "lon": 39.2000, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": "TriageNet" } },
+    { "id": "f8",  "name": "Hamad Medical Corporation",         "country": "Qatar",        "city": "Doha",      "lat": 25.2919, "lon": 51.5346, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": "TriageNet" } },
+    { "id": "f9",  "name": "Sidra Medicine",                    "country": "Qatar",        "city": "Doha",      "lat": 25.3200, "lon": 51.4400, "deployments": { "radiology": "Nexus Rad", "pathology": null, "triage": "TriageNet" } },
+    { "id": "f10", "name": "Salmaniya Medical Complex",         "country": "Bahrain",      "city": "Manama",    "lat": 26.2225, "lon": 50.5975, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": null } },
+    { "id": "f11", "name": "Ibn Sina Hospital",                 "country": "Kuwait",       "city": "Kuwait City","lat": 29.3697, "lon": 47.9783, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": null } },
+    { "id": "f12", "name": "Sultan Qaboos University Hospital", "country": "Oman",         "city": "Muscat",    "lat": 23.5931, "lon": 58.1704, "deployments": { "radiology": "Nexus Rad", "pathology": "PathLens", "triage": "TriageNet" } }
+  ],
+  "adoption_trend": [
+    { "month": "Jan", "radiology": 18, "pathology": 6,  "triage": 4  },
+    { "month": "Feb", "radiology": 22, "pathology": 8,  "triage": 5  },
+    { "month": "Mar", "radiology": 27, "pathology": 10, "triage": 7  },
+    { "month": "Apr", "radiology": 33, "pathology": 13, "triage": 9  },
+    { "month": "May", "radiology": 39, "pathology": 17, "triage": 12 },
+    { "month": "Jun", "radiology": 46, "pathology": 21, "triage": 16 },
+    { "month": "Jul", "radiology": 52, "pathology": 26, "triage": 21 },
+    { "month": "Aug", "radiology": 58, "pathology": 31, "triage": 27 },
+    { "month": "Sep", "radiology": 64, "pathology": 36, "triage": 33 },
+    { "month": "Oct", "radiology": 69, "pathology": 41, "triage": 39 },
+    { "month": "Nov", "radiology": 74, "pathology": 46, "triage": 45 },
+    { "month": "Dec", "radiology": 79, "pathology": 51, "triage": 51 }
+  ],
+  "concordance": [
+    { "use_case": "radiology", "ai": 94.2, "human": 96.8, "n": 41820 },
+    { "use_case": "pathology", "ai": 91.6, "human": 95.9, "n": 12340 },
+    { "use_case": "triage",    "ai": 88.3, "human": 93.1, "n": 27110 }
+  ],
+  "time_to_report": {
+    "radiology": { "baseline_min": 52, "assisted_min": 19 },
+    "pathology": { "baseline_min": 96, "assisted_min": 44 },
+    "triage":    { "baseline_min": 14, "assisted_min": 4  }
+  }
+}
+</file>
+
+<file path="backend/app/routers/__init__.py">
+
+</file>
+
+<file path="backend/app/routers/rail.py">
+from fastapi import APIRouter, Query
+from fastapi.responses import JSONResponse
+from typing import Literal, Optional
+
+from .. import data_store
+from .. import fda_registry
+
+router = APIRouter(prefix="/api", tags=["clinical-ai-rail"])
+
+UseCase = Literal["radiology", "pathology", "triage"]
+
+
+@router.get("/meta")
+def meta():
+    return data_store.get_meta()
+
+
+@router.get("/facilities")
+def facilities(use_case: Optional[UseCase] = Query(default=None)):
+    return data_store.get_facilities_geojson(use_case)
+
+
+@router.get("/adoption-trend")
+def adoption_trend():
+    return data_store.get_adoption_trend()
+
+
+@router.get("/concordance")
+def concordance():
+    return data_store.get_concordance()
+
+
+@router.get("/time-to-report")
+def time_to_report():
+    return data_store.get_time_to_report()
+
+
+@router.get("/coverage-matrix")
+def coverage_matrix():
+    return data_store.get_coverage_matrix()
+
+
+@router.get("/sample-data")
+def sample_data():
+    data = data_store.get_full_sample_export()
+    return JSONResponse(
+        content=data,
+        headers={"Content-Disposition": "attachment; filename=clinical-ai-adoption-sample-data.json"},
+    )
+
+
+@router.get("/fda-registry")
+def fda_registry_endpoint(specialty: Optional[UseCase] = Query(default=None)):
+    """REAL data (not mock): sourced FDA-cleared AI/ML device snapshot."""
+    return {
+        "source": fda_registry.get_source_info(),
+        "devices": fda_registry.get_fda_devices(specialty),
+    }
+</file>
+
+<file path="backend/app/__init__.py">
+
+</file>
+
+<file path="backend/app/data_store.py">
+"""
+Data orchestration layer.
+
+Guardrail (Real Rails Doc 4 — Mock Fallback): if MOCK_DATA_PATH can't be read,
+or a future live-source fetch fails, we fall back to the bundled mock_data.json
+so the UI never breaks mid-demo.
+"""
+import json
+import os
+from pathlib import Path
+from functools import lru_cache
+
+import pandas as pd
+
+DATA_DIR = Path(__file__).parent / "data"
+MOCK_DATA_PATH = DATA_DIR / "mock_data.json"
+
+
+@lru_cache(maxsize=1)
+def _raw() -> dict:
+    try:
+        with open(MOCK_DATA_PATH, "r") as f:
+            return json.load(f)
+    except Exception:
+        # Mock fallback guardrail: never let the API 500 the dashboard.
+        return {
+            "meta": {"rail": "Clinical AI", "poc_title": "Clinical AI Diagnostics Adoption Monitor", "sources": [], "note": "fallback-empty"},
+            "facilities": [],
+            "adoption_trend": [],
+            "concordance": [],
+            "time_to_report": {},
+        }
+
+
+def get_meta() -> dict:
+    return _raw()["meta"]
+
+
+def get_facilities_geojson(use_case: str | None = None) -> dict:
+    """Return facilities as a GeoJSON FeatureCollection, optionally filtered
+    to facilities with a live deployment for a given use case."""
+    df = pd.DataFrame(_raw()["facilities"])
+    if use_case:
+        df = df[df["deployments"].apply(lambda d: bool(d.get(use_case)))]
+
+    features = []
+    for _, row in df.iterrows():
+        deployments = row["deployments"]
+        live_count = sum(1 for v in deployments.values() if v)
+        features.append({
+            "type": "Feature",
+            "geometry": {"type": "Point", "coordinates": [row["lon"], row["lat"]]},
+            "properties": {
+                "id": row["id"],
+                "name": row["name"],
+                "country": row["country"],
+                "city": row["city"],
+                "deployments": deployments,
+                "live_use_cases": live_count,
+                # intelligence layer: don't just show a count, show it relative to the network
+                "coverage_pct_of_use_cases": round(live_count / 3 * 100, 1),
+            },
+        })
+    return {"type": "FeatureCollection", "features": features}
+
+
+def get_adoption_trend() -> list[dict]:
+    return _raw()["adoption_trend"]
+
+
+def get_concordance() -> list[dict]:
+    """Concordance benchmark + intelligence layer: AI concordance expressed
+    relative to the Gulf-wide average across use cases, not just an absolute %."""
+    rows = _raw()["concordance"]
+    avg = sum(r["ai"] for r in rows) / len(rows) if rows else 0
+    out = []
+    for r in rows:
+        out.append({
+            **r,
+            "gap_to_human": round(r["human"] - r["ai"], 1),
+            "delta_vs_network_avg_pts": round(r["ai"] - avg, 1),
+        })
+    return out
+
+
+def get_time_to_report() -> dict:
+    """Time-to-report + intelligence layer: convert raw minutes into a
+    percentage-improvement metric per use case, plus a network-wide figure."""
+    ttr = _raw()["time_to_report"]
+    out = {}
+    improvements = []
+    for use_case, v in ttr.items():
+        pct = round((1 - v["assisted_min"] / v["baseline_min"]) * 100)
+        improvements.append(pct)
+        out[use_case] = {**v, "improvement_pct": pct}
+    out["_network_avg_improvement_pct"] = round(sum(improvements) / len(improvements)) if improvements else 0
+    return out
+
+
+def get_coverage_matrix() -> list[dict]:
+    facilities = _raw()["facilities"]
+    return [
+        {
+            "id": f["id"],
+            "name": f["name"],
+            "country": f["country"],
+            "coverage": {uc: bool(f["deployments"].get(uc)) for uc in ("radiology", "pathology", "triage")},
+        }
+        for f in facilities
+    ]
+
+
+def get_full_sample_export() -> dict:
+    """Everything the sidebar 'Download Sample Data' button needs in one file."""
+    return _raw()
+</file>
+
+<file path="backend/app/fda_registery.py">
+"""
+Real Rails — FDA AI/ML-Enabled Device Registry
+================================================
+This module serves REAL, sourced data (unlike data_store.py, which serves
+the illustrative/mock deployment dataset). See fda_registry.json for the
+source URL and snapshot caveats.
+"""
+import json
+from pathlib import Path
+from functools import lru_cache
+
+DATA_DIR = Path(__file__).parent / "data"
+FDA_REGISTRY_PATH = DATA_DIR / "fda_registery.json"
+
+
+@lru_cache(maxsize=1)
+def _raw() -> dict:
+    try:
+        with open(FDA_REGISTRY_PATH, "r") as f:
+            return json.load(f)
+    except Exception:
+        return {"source": {}, "devices": []}
+
+
+def get_source_info() -> dict:
+    return _raw()["source"]
+
+
+def get_fda_devices(specialty: str | None = None) -> list[dict]:
+    devices = _raw()["devices"]
+    if specialty:
+        devices = [d for d in devices if d["specialty"] == specialty]
+    return devices
+
+
+def get_fda_registry_full() -> dict:
+    return _raw()
+</file>
+
+<file path="backend/app/fda_registry.py">
+"""Compatibility wrapper for the real FDA registry module.
+
+This project uses the correctly spelled module name in the API router, but the
+historical dataset file and legacy module were misspelled as `fda_registery`.
+The implementation lives in the canonical module and is re-exported here so both
+import styles work.
+"""
+
+from .fda_registery import (
+    DATA_DIR,
+    FDA_REGISTRY_PATH,
+    _raw,
+    get_fda_devices,
+    get_fda_registry_full,
+    get_source_info,
+)
+
+__all__ = [
+    "DATA_DIR",
+    "FDA_REGISTRY_PATH",
+    "_raw",
+    "get_fda_devices",
+    "get_fda_registry_full",
+    "get_source_info",
+]
+</file>
+
+<file path="backend/app/main.py">
+"""
+Real Rails — Clinical AI Diagnostics Adoption Monitor
+FastAPI backend. Serves the "Intelligence Layer" API consumed by the
+Next.js frontend's map, charts and sidebar.
+
+Run:
+    uvicorn app.main:app --reload --port 8000
+"""
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+import os
+
+from .routers import rail
+
+app = FastAPI(
+    title="Real Rails — Clinical AI Diagnostics Adoption Monitor",
+    description="Deployment, concordance and time-to-report telemetry for AI-assisted radiology, pathology and triage across Gulf health systems.",
+    version="1.0.0",
+)
+
+# CORS: frontend origin is configurable via env, never hardcoded beyond localhost dev default.
+origins = os.getenv("FRONTEND_ORIGIN", "http://localhost:3000").split(",")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(rail.router)
+
+
+@app.get("/")
+def root():
+    return {"status": "ok", "service": "real-rails-clinical-ai-backend"}
+
+
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
+</file>
+
+<file path="backend/.env.example">
+# No secrets are required for this PoC (mock data + FastAPI, no external map/API keys on the backend).
+FRONTEND_ORIGIN=http://localhost:3000
+</file>
+
+<file path="backend/requirements.txt">
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pandas==2.2.3
+python-dotenv==1.0.1
+</file>
+
+<file path="frontend/app/globals.css">
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Clinical AI Diagnostics Adoption Monitoring Dashboard — Visual DNA
+   Deep midnight teal-charcoal base, luminance < 10%, tinted for the
+   clinical/medical-monitor register rather than generic obsidian black. */
+:root {
+  --ci-bg: #071a20;
+  --ci-surface: #0d242b;
+  --ci-border: #17323b;
+  --ci-teal: #2dd4bf;
+  --ci-cyan: #38bdf8;
+  --ci-amber: #f59e0b;
+  --ci-indigo: #818cf8;
+}
+
+html,
+body {
+  background: var(--ci-bg);
+  color: #e6edf3;
+  font-family: "Inter", system-ui, sans-serif;
+  letter-spacing: -0.01em;
+  overscroll-behavior: none;
+}
+
+.rr-card {
+  background: rgba(13, 36, 43, 0.72);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--ci-border);
+  border-radius: 10px;
+}
+
+.rr-glow {
+  box-shadow: 0 0 0 0.5px rgba(45, 212, 191, 0.9), 0 0 14px rgba(45, 212, 191, 0.22);
+}
+
+.rr-mono {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Leaflet dark-mode tile filter, tinted toward the clinical teal-charcoal base */
+.rr-leaflet-dark .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(175deg) brightness(0.82) contrast(0.95) saturate(0.55);
+}
+.rr-leaflet-dark .leaflet-marker-pane,
+.rr-leaflet-dark .leaflet-popup-pane {
+  filter: none;
+}
+.rr-leaflet-dark .leaflet-control-attribution {
+  background: rgba(7, 26, 32, 0.7) !important;
+  color: #7e97a0 !important;
+}
+.rr-leaflet-dark .leaflet-control-attribution a {
+  color: #a8c5cc !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ci-border);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+</file>
+
+<file path="frontend/app/layout.tsx">
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Infocreon Internship - Clinical AI Diagnostics Adoption Monitoring Dashboard",
+  description:
+    "Deployment, concordance and time-to-report telemetry for AI-assisted radiology, pathology and triage across Gulf health systems.",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body className="bg-obsidian text-white antialiased overflow-hidden">{children}</body>
+    </html>
+  );
+}
+</file>
+
+<file path="frontend/app/page.tsx">
+"use client";
+
+import { useState } from "react";
+import dynamic from "next/dynamic";
+import Header from "@/components/Header";
+import IntelligencePanel, { PanelTab } from "@/components/IntelligencePanel";
+import { FacilityProperties, UseCase } from "@/lib/types";
+
+// Leaflet touches `window` — must be client-only, no SSR.
+const MapPanel = dynamic(() => import("@/components/MapPanel"), {
+  ssr: false,
+  loading: () => <div className="fixed inset-0 bg-obsidian animate-pulse" />,
+});
+
+export default function Home() {
+  const [activeUseCase, setActiveUseCase] = useState<UseCase | "all">("all");
+  const [panelOpen, setPanelOpen] = useState(false);
+  const [panelTab, setPanelTab] = useState<PanelTab>("insights");
+  const [selectedFacility, setSelectedFacility] = useState<FacilityProperties | null>(null);
+
+  return (
+    <main className="relative h-screen w-screen overflow-hidden bg-obsidian">
+      {/* Pillar II — Full-screen visualization stage */}
+      <MapPanel
+        activeUseCase={activeUseCase}
+        onSelectFacility={(facility) => {
+          setSelectedFacility(facility);
+          setPanelTab("facility");
+          setPanelOpen(true);
+        }}
+      />
+
+      {/* Pillar III — Minimalist header with Developer Signature */}
+      <Header
+        onOpenPanel={() => {
+          setPanelTab((t) => (t === "facility" && selectedFacility ? t : "insights"));
+          setPanelOpen(true);
+        }}
+      />
+
+      {/* Pillar II — Dynamic slide-over Intelligence Panel, hidden by default */}
+      <IntelligencePanel
+        open={panelOpen}
+        onClose={() => setPanelOpen(false)}
+        tab={panelTab}
+        onChangeTab={setPanelTab}
+        facility={selectedFacility}
+        activeUseCase={activeUseCase}
+        onChangeUseCase={setActiveUseCase}
+      />
+    </main>
+  );
+}
+</file>
+
+<file path="frontend/components/ui/button.tsx">
+import { ButtonHTMLAttributes } from "react";
+import clsx from "clsx";
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "primary" | "outline" | "ghost";
+  active?: boolean;
+}
+
+export function Button({ className, variant = "outline", active, ...props }: ButtonProps) {
+  return (
+    <button
+      className={clsx(
+        "px-3 py-1.5 rounded-md text-xs font-medium transition-all border",
+        variant === "primary" &&
+          "bg-cyan text-obsidian border-cyan hover:brightness-110 rr-glow",
+        variant === "outline" &&
+          clsx(
+            "border-slateBorder text-slate-300 hover:text-white hover:border-cyan/60",
+            active && "border-cyan text-cyan rr-glow"
+          ),
+        variant === "ghost" && "border-transparent text-slate-400 hover:text-white",
+        className
+      )}
+      {...props}
+    />
+  );
+}
+</file>
+
+<file path="frontend/components/ui/card.tsx">
+import { HTMLAttributes } from "react";
+import clsx from "clsx";
+
+export function Card({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
+  return <div className={clsx("rr-card p-5", className)} {...props} />;
+}
+
+export function CardEyebrow({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      className={clsx(
+        "font-mono text-[10.5px] uppercase tracking-[0.14em] text-slate-400 mb-1.5",
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+export function CardTitle({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h3
+      className={clsx("text-[15px] font-semibold text-white mb-3 tracking-tight", className)}
+      {...(props as any)}
+    />
+  );
+}
+</file>
+
+<file path="frontend/components/AdoptionTrendChart.tsx">
+"use client";
+
+import { useEffect, useState } from "react";
+import {
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
+} from "recharts";
+import { AdoptionTrendPoint } from "@/lib/types";
+import { getAdoptionTrend } from "@/lib/api";
+import { CardEyebrow, CardTitle } from "@/components/ui/card";
+
+const UC_COLOR: Record<string, string> = {
+  radiology: "#38BDF8",
+  pathology: "#F59E0B",
+  triage: "#818CF8",
+};
+const UC_LABEL: Record<string, string> = {
+  radiology: "Radiology",
+  pathology: "Pathology",
+  triage: "Triage",
+};
+
+export default function AdoptionTrendChart() {
+  const [data, setData] = useState<AdoptionTrendPoint[]>([]);
+  useEffect(() => {
+    getAdoptionTrend().then(setData);
+  }, []);
+
+  return (
+    <div className="rr-card p-5">
+      <CardEyebrow>Deployment trajectory</CardEyebrow>
+      <CardTitle>Adoption rate by use case</CardTitle>
+      <ResponsiveContainer width="100%" height={240}>
+        <LineChart data={data} margin={{ top: 4, right: 12, left: -18, bottom: 0 }}>
+          <CartesianGrid stroke="#1F2937" strokeDasharray="3 3" vertical={false} />
+          <XAxis dataKey="month" tick={{ fill: "#7E97A0", fontSize: 11 }} axisLine={{ stroke: "#1F2937" }} tickLine={false} />
+          <YAxis tick={{ fill: "#7E97A0", fontSize: 11 }} axisLine={false} tickLine={false} unit="%" />
+          <Tooltip contentStyle={{ background: "#030712", border: "1px solid #1F2937", borderRadius: 8, fontSize: 12 }} labelStyle={{ color: "#E6EDF3" }} />
+          <Legend formatter={(v) => <span className="text-slate-400 text-xs">{UC_LABEL[v as string]}</span>} />
+          {(["radiology", "pathology", "triage"] as const).map((uc) => (
+            <Line key={uc} type="monotone" dataKey={uc} stroke={UC_COLOR[uc]} strokeWidth={2.2} dot={false} />
+          ))}
+        </LineChart>
+      </ResponsiveContainer>
+      <div className="text-[11px] text-slate-500 mt-1">
+        Share of eligible facilities with a live tool in production, Jan–Dec (mock).
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="frontend/components/ConcordanceChart.tsx">
+"use client";
+
+import { useEffect, useState } from "react";
+import {
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell,
+} from "recharts";
+import { ConcordanceRow } from "@/lib/types";
+import { getConcordance } from "@/lib/api";
+import { CardEyebrow, CardTitle } from "@/components/ui/card";
+
+const UC_COLOR: Record<string, string> = {
+  radiology: "#38BDF8",
+  pathology: "#F59E0B",
+  triage: "#818CF8",
+};
+
+export default function ConcordanceChart() {
+  const [data, setData] = useState<ConcordanceRow[]>([]);
+  useEffect(() => {
+    getConcordance().then(setData);
+  }, []);
+
+  return (
+    <div className="rr-card p-5">
+      <CardEyebrow>Clinical safety benchmark</CardEyebrow>
+      <CardTitle>Diagnostic concordance vs specialist read</CardTitle>
+      <ResponsiveContainer width="100%" height={240}>
+        <BarChart data={data} margin={{ top: 4, right: 12, left: -18, bottom: 0 }}>
+          <CartesianGrid stroke="#1F2937" strokeDasharray="3 3" vertical={false} />
+          <XAxis dataKey="use_case" tick={{ fill: "#7E97A0", fontSize: 11 }} axisLine={{ stroke: "#1F2937" }} tickLine={false} tickFormatter={(v) => v[0].toUpperCase() + v.slice(1)} />
+          <YAxis domain={[80, 100]} tick={{ fill: "#7E97A0", fontSize: 11 }} axisLine={false} tickLine={false} unit="%" />
+          <Tooltip
+            contentStyle={{ background: "#030712", border: "1px solid #1F2937", borderRadius: 8, fontSize: 12 }}
+            labelStyle={{ color: "#E6EDF3" }}
+            formatter={(value: any, name: string, props: any) => {
+              if (name === "ai") return [`${value}%`, "AI read"];
+              if (name === "human") return [`${value}%`, "Specialist read"];
+              return [value, name];
+            }}
+          />
+          <Legend formatter={(v) => <span className="text-slate-400 text-xs">{v === "ai" ? "AI read" : "Specialist read"}</span>} />
+          <Bar dataKey="ai" radius={[4, 4, 0, 0]}>
+            {data.map((d, i) => (
+              <Cell key={i} fill={UC_COLOR[d.use_case]} />
+            ))}
+          </Bar>
+          <Bar dataKey="human" fill="#7E97A0" fillOpacity={0.4} radius={[4, 4, 0, 0]} />
+        </BarChart>
+      </ResponsiveContainer>
+      <div className="text-[11px] text-slate-500 mt-1">
+        {data[0] &&
+          `Radiology leads the network by ${Math.max(...data.map((d) => d.delta_vs_network_avg_pts)).toFixed(1)} pts vs the Gulf-wide average.`}
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="frontend/components/CoverageMatrix.tsx">
+"use client";
+
+import { useEffect, useState } from "react";
+import { CoverageRow, UseCase } from "@/lib/types";
+import { getCoverageMatrix } from "@/lib/api";
+import { CardEyebrow, CardTitle } from "@/components/ui/card";
+
+const UC_COLOR: Record<UseCase, string> = {
+  radiology: "#38BDF8",
+  pathology: "#F59E0B",
+  triage: "#818CF8",
+};
+
+export default function CoverageMatrix() {
+  const [rows, setRows] = useState<CoverageRow[]>([]);
+  useEffect(() => {
+    getCoverageMatrix().then(setRows);
+  }, []);
+
+  const useCases: UseCase[] = ["radiology", "pathology", "triage"];
+
+  return (
+    <div className="rr-card p-5">
+      <CardEyebrow>Rollout status</CardEyebrow>
+      <CardTitle>Use-case coverage matrix</CardTitle>
+      <div className="overflow-x-auto">
+        <table className="w-full text-[12.5px]">
+          <thead>
+            <tr>
+              <th className="text-left py-1.5 px-2 text-slate-400 font-medium border-b border-slateBorder">Facility</th>
+              {useCases.map((uc) => (
+                <th key={uc} className="text-center py-1.5 px-2 font-semibold border-b border-slateBorder capitalize" style={{ color: UC_COLOR[uc] }}>
+                  {uc}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r, i) => (
+              <tr key={r.id} className={i % 2 ? "bg-white/[0.02]" : ""}>
+                <td className="py-1.5 px-2 border-b border-slateBorder text-slate-200">
+                  {r.name} <span className="text-slate-500 text-[11px]">· {r.country}</span>
+                </td>
+                {useCases.map((uc) => (
+                  <td key={uc} className="text-center py-1.5 px-2 border-b border-slateBorder">
+                    {r.coverage[uc] ? (
+                      <span className="font-mono text-[11px]" style={{ color: UC_COLOR[uc] }}>● live</span>
+                    ) : (
+                      <span className="text-slateBorder">—</span>
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="frontend/components/FdaRegistryPanel.tsx">
+"use client";
+
+import { useEffect, useState } from "react";
+import { ExternalLink } from "lucide-react";
+import { FdaRegistry, UseCase } from "@/lib/types";
+import { getFdaRegistry } from "@/lib/api";
+import { CardEyebrow, CardTitle } from "@/components/ui/card";
+
+const UC_COLOR: Record<UseCase, string> = {
+  radiology: "#38BDF8",
+  pathology: "#F59E0B",
+  triage: "#818CF8",
+};
+
+export default function FdaRegistryPanel() {
+  const [data, setData] = useState<FdaRegistry | null>(null);
+
+  useEffect(() => {
+    getFdaRegistry().then(setData);
+  }, []);
+
+  if (!data) return <div className="rr-card p-5 h-[220px] animate-pulse" />;
+
+  return (
+    <div className="rr-card p-5">
+      <div className="flex items-center justify-between mb-1">
+        <CardEyebrow>Regulatory registry — real data</CardEyebrow>
+        <span className="inline-block text-[9.5px] font-mono uppercase tracking-[0.12em] text-emerald-400 border border-emerald-400/40 rounded-full px-2 py-0.5">
+          sourced, not mock
+        </span>
+      </div>
+      <CardTitle>FDA-cleared AI/ML diagnostic devices</CardTitle>
+      <div className="overflow-x-auto max-h-[260px]">
+        <table className="w-full text-[12px]">
+          <thead>
+            <tr>
+              <th className="text-left py-1.5 px-2 text-slate-400 font-medium border-b border-slateBorder">Manufacturer</th>
+              <th className="text-left py-1.5 px-2 text-slate-400 font-medium border-b border-slateBorder">Product line</th>
+              <th className="text-left py-1.5 px-2 text-slate-400 font-medium border-b border-slateBorder">Specialty</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.devices.map((d, i) => (
+              <tr key={i} className={i % 2 ? "bg-white/[0.02]" : ""}>
+                <td className="py-1.5 px-2 border-b border-slateBorder text-slate-200">{d.manufacturer}</td>
+                <td className="py-1.5 px-2 border-b border-slateBorder text-slate-300">{d.product_line}</td>
+                <td className="py-1.5 px-2 border-b border-slateBorder">
+                  <span className="font-mono text-[11px] capitalize" style={{ color: UC_COLOR[d.specialty] }}>
+                    {d.specialty}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="text-[11px] text-slate-500 mt-3 flex items-start gap-1.5">
+        
+        <a  href={data.source.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-cyan hover:underline shrink-0"
+        >
+          {data.source.publisher} <ExternalLink size={11} />
+        </a>
+        <span>— {data.source.snapshot_note}</span>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="frontend/components/Header.tsx">
+"use client";
+
+import { useState } from "react";
+import { Info, X, PanelRightOpen } from "lucide-react";
+
+export default function Header({ onOpenPanel }: { onOpenPanel: () => void }) {
+  const [showInfo, setShowInfo] = useState(false);
+
+  return (
+    <>
+      <header className="fixed top-0 left-0 right-0 z-30 h-16 flex items-center justify-between px-4 sm:px-6 bg-gradient-to-b from-[#071A20]/85 via-[#071A20]/50 to-transparent backdrop-blur-md">
+        <div className="min-w-0">
+          <div className="font-mono text-[9.5px] tracking-[0.16em] text-brandTeal uppercase leading-none mb-1">
+            Infocreon Internship
+          </div>
+          <div className="text-[13px] sm:text-[15px] font-semibold text-white leading-tight truncate max-w-[62vw] sm:max-w-none">
+            Clinical AI Diagnostics Adoption Monitoring Dashboard
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2 shrink-0">
+          <button
+            onClick={onOpenPanel}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-slateBorder text-slate-300 text-xs font-medium hover:text-white hover:border-brandTeal/60 transition-all bg-[#0D242B]/60"
+            aria-label="Open intelligence panel"
+          >
+            <PanelRightOpen size={14} />
+            <span className="hidden sm:inline">Intelligence</span>
+          </button>
+          <button
+            onClick={() => setShowInfo((v) => !v)}
+            className="w-8 h-8 flex items-center justify-center rounded-full border border-slateBorder text-slate-300 hover:text-brandTeal hover:border-brandTeal/60 transition-all bg-[#0D242B]/60"
+            aria-label="Project information"
+          >
+            <Info size={15} />
+          </button>
+        </div>
+      </header>
+
+      {showInfo && (
+        <>
+          <div className="fixed inset-0 z-40" onClick={() => setShowInfo(false)} />
+          <div className="fixed top-[68px] right-4 sm:right-6 z-50 w-[280px] rr-card p-4 rr-glow">
+            <div className="flex items-center justify-between mb-3">
+              <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-brandTeal">
+                Developer Signature
+              </span>
+              <button onClick={() => setShowInfo(false)} className="text-slate-500 hover:text-white">
+                <X size={14} />
+              </button>
+            </div>
+            <dl className="space-y-2 text-[12.5px]">
+              <div className="flex justify-between gap-3">
+                <dt className="text-slate-500">Architect</dt>
+                <dd className="text-white font-medium text-right">Thara Asharaf</dd>
+              </div>
+              <div className="flex justify-between gap-3">
+                <dt className="text-slate-500">POC ID</dt>
+                <dd className="text-white font-mono text-right">49</dd>
+              </div>
+              <div className="flex justify-between gap-3">
+                <dt className="text-slate-500">GitHub</dt>
+                <dd className="text-white font-mono text-right">Thara81</dd>
+              </div>
+              <div className="flex justify-between gap-3">
+                <dt className="text-slate-500">Batch</dt>
+                <dd className="text-white text-right">Batch 6 Interns</dd>
+              </div>
+              <div className="pt-1 border-t border-slateBorder">
+                <dt className="text-slate-500 mb-1">Stack</dt>
+                <dd className="text-slate-200 text-[12px] leading-snug">
+                  Next.js, FastAPI, Tailwind CSS, Leaflet + Recharts
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </>
+      )}
+    </>
+  );
+}
+</file>
+
+<file path="frontend/components/IntelligencePanel.tsx">
+"use client";
+
+import { X } from "lucide-react";
+import { CardEyebrow, CardTitle } from "@/components/ui/card";
+import Sidebar from "@/components/Sidebar";
+import AdoptionTrendChart from "@/components/AdoptionTrendChart";
+import ConcordanceChart from "@/components/ConcordanceChart";
+import TTRGauges from "@/components/TTRGauges";
+import CoverageMatrix from "@/components/CoverageMatrix";
+import FdaRegistryPanel from "@/components/FdaRegistryPanel";
+import { FacilityProperties, UseCase } from "@/lib/types";
+
+export type PanelTab = "facility" | "insights" | "analytics";
+
+const UC_COLOR: Record<UseCase, string> = {
+  radiology: "#38BDF8",
+  pathology: "#F59E0B",
+  triage: "#818CF8",
+};
+
+export default function IntelligencePanel({
+  open,
+  onClose,
+  tab,
+  onChangeTab,
+  facility,
+  activeUseCase,
+  onChangeUseCase,
+}: {
+  open: boolean;
+  onClose: () => void;
+  tab: PanelTab;
+  onChangeTab: (t: PanelTab) => void;
+  facility: FacilityProperties | null;
+  activeUseCase: UseCase | "all";
+  onChangeUseCase: (uc: UseCase | "all") => void;
+}) {
+  const tabs: { id: PanelTab; label: string }[] = [
+    ...(facility ? [{ id: "facility" as PanelTab, label: "Facility" }] : []),
+    { id: "insights", label: "Insights" },
+    { id: "analytics", label: "Analytics" },
+  ];
+
+  return (
+    <>
+      {/* Backdrop — click to close, per "Click & Move" exit logic */}
+      <div
+        className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={onClose}
+      />
+
+      {/* Slide-over panel — hidden by default, slides in from the right */}
+      <aside
+        className={`fixed top-0 right-0 z-50 h-full w-full sm:w-[440px] bg-[#0D242B]/95 backdrop-blur-xl border-l border-slateBorder
+          transform transition-transform duration-300 ease-out flex flex-col
+          ${open ? "translate-x-0" : "translate-x-full"}`}
+      >
+        {/* Panel header: tabs + close */}
+        <div className="flex items-center justify-between px-4 pt-5 pb-3 border-b border-slateBorder shrink-0">
+          <div className="flex gap-1.5">
+            {tabs.map((t) => (
+              <button
+                key={t.id}
+                onClick={() => onChangeTab(t.id)}
+                className={`px-3 py-1.5 rounded-md text-xs font-medium border transition-all ${
+                  tab === t.id
+                    ? "border-brandTeal text-brandTeal rr-glow"
+                    : "border-slateBorder text-slate-400 hover:text-white"
+                }`}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
+          <button
+            onClick={onClose}
+            className="w-8 h-8 flex items-center justify-center rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all"
+            aria-label="Close intelligence panel"
+          >
+            <X size={16} />
+          </button>
+        </div>
+
+        {/* Scrollable content */}
+        <div className="flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-4">
+          {tab === "facility" && facility && (
+            <div className="rr-card p-5">
+              <CardEyebrow>Selected data point</CardEyebrow>
+              <CardTitle>{facility.name}</CardTitle>
+              <p className="text-[13px] text-slate-400 mb-4">
+                {facility.city}, {facility.country}
+              </p>
+              <div className="space-y-2 mb-4">
+                {(["radiology", "pathology", "triage"] as UseCase[]).map((uc) => (
+                  <div
+                    key={uc}
+                    className="flex justify-between items-center py-2 px-3 rounded-md border border-slateBorder"
+                  >
+                    <span className="text-[12.5px] capitalize" style={{ color: UC_COLOR[uc] }}>
+                      {uc}
+                    </span>
+                    <span className="font-mono text-[12px] text-slate-200">
+                      {facility.deployments[uc] ?? "— not deployed"}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="rr-mono">
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-slate-500">
+                  Use-case coverage
+                </div>
+                <div className="text-2xl font-semibold text-brandTeal mt-1">
+                  {facility.coverage_pct_of_use_cases}%
+                </div>
+                <div className="text-[11px] text-slate-500">of radiology / pathology / triage live here</div>
+              </div>
+            </div>
+          )}
+
+          {tab === "insights" && (
+            <Sidebar activeUseCase={activeUseCase} onChangeUseCase={onChangeUseCase} />
+          )}
+
+          {tab === "analytics" && (
+            <>
+              <AdoptionTrendChart />
+              <ConcordanceChart />
+              <TTRGauges />
+              <CoverageMatrix />
+              <FdaRegistryPanel />
+            </>
+          )}
+        </div>
+      </aside>
+    </>
+  );
+}
+</file>
+
+<file path="frontend/components/MapPanel.tsx">
+"use client";
+
+import { useEffect, useState } from "react";
+import { MapContainer, TileLayer, CircleMarker, Tooltip as LeafletTooltip } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import { FacilityCollection, FacilityProperties, UseCase } from "@/lib/types";
+import { getFacilities } from "@/lib/api";
+
+const UC_COLOR: Record<UseCase, string> = {
+  radiology: "#38BDF8",
+  pathology: "#F59E0B",
+  triage: "#818CF8",
+};
+
+export default function MapPanel({
+  activeUseCase,
+  onSelectFacility,
+}: {
+  activeUseCase: UseCase | "all";
+  onSelectFacility: (facility: FacilityProperties) => void;
+}) {
+  const [data, setData] = useState<FacilityCollection | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    getFacilities(activeUseCase === "all" ? undefined : activeUseCase).then((d) => {
+      if (!cancelled) setData(d);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [activeUseCase]);
+
+  return (
+    <div className="fixed inset-0 rr-leaflet-dark">
+      <MapContainer
+        center={[24.8, 51.5]}
+        zoom={5}
+        scrollWheelZoom={true}
+        zoomControl={false}
+        style={{ height: "100vh", width: "100vw", background: "#071A20" }}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {data?.features.map((f) => {
+          const [lon, lat] = f.geometry.coordinates;
+          const p = f.properties;
+          const color = activeUseCase === "all" ? "#2DD4BF" : UC_COLOR[activeUseCase as UseCase];
+          return (
+            <CircleMarker
+              key={p.id}
+              center={[lat, lon]}
+              radius={7 + p.live_use_cases * 2.2}
+              pathOptions={{ color, fillColor: color, fillOpacity: 0.4, weight: 1.5 }}
+              eventHandlers={{
+                click: () => onSelectFacility(p),
+              }}
+            >
+              <LeafletTooltip direction="top" opacity={1}>
+                <div className="text-xs">
+                  <div className="font-semibold">{p.name}</div>
+                  <div className="text-slate-500">{p.city}, {p.country} — click for detail</div>
+                </div>
+              </LeafletTooltip>
+            </CircleMarker>
+          );
+        })}
+      </MapContainer>
+
+      {/* Floating status chip — top-left, clear of the header */}
+      <div className="absolute top-20 left-4 sm:left-6 rr-card px-3 py-2 pointer-events-none">
+        <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-slate-400">
+          Deployment footprint — Gulf region
+        </div>
+        <div className="font-mono text-[13px] text-brandTeal mt-0.5">
+          {data ? `${data.features.length} facilities` : "loading…"}
+        </div>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="frontend/components/Sidebar.tsx">
+"use client";
+
+import { useEffect, useState } from "react";
+import { Download } from "lucide-react";
+import { Card, CardEyebrow, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { UseCase, ConcordanceRow } from "@/lib/types";
+import { getConcordance, sampleDataDownloadUrl } from "@/lib/api";
+
+const USE_CASES: (UseCase | "all")[] = ["all", "radiology", "pathology", "triage"];
+
+export default function Sidebar({
+  activeUseCase,
+  onChangeUseCase,
+}: {
+  activeUseCase: UseCase | "all";
+  onChangeUseCase: (uc: UseCase | "all") => void;
+}) {
+  const [avgConcordance, setAvgConcordance] = useState<number | null>(null);
+
+  useEffect(() => {
+    getConcordance().then((rows: ConcordanceRow[]) => {
+      setAvgConcordance(rows.reduce((s, r) => s + r.ai, 0) / rows.length);
+    });
+  }, []);
+
+  return (
+    <aside className="w-full flex flex-col gap-4">
+      {/* Section A — Title & headline metric */}
+      <Card>
+        <div className="inline-block font-mono text-[10.5px] tracking-[0.14em] text-cyan border border-cyan/50 rounded-full px-2.5 py-0.5 mb-3 uppercase rr-glow">
+          Rail · Clinical AI
+        </div>
+        <h1 className="text-xl font-semibold tracking-tightest leading-snug mb-2">
+          Clinical AI Diagnostics Adoption Monitor
+        </h1>
+        <p className="text-[13px] text-slate-400 mb-4">
+          Deployment, concordance and reporting-speed telemetry for AI-assisted radiology,
+          pathology and triage across Gulf health systems.
+        </p>
+        <div className="rr-mono">
+          <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-slate-500">Network avg. AI concordance</div>
+          <div className="text-3xl font-semibold text-cyan mt-1">
+            {avgConcordance ? `${avgConcordance.toFixed(1)}%` : "—"}
+          </div>
+          <div className="text-[11px] text-slate-500">vs. specialist read, network-wide</div>
+        </div>
+      </Card>
+
+      {/* Section B — Why this matters */}
+      <Card className="border-l-2" style={{ borderLeftColor: "#38BDF8" }}>
+        <CardEyebrow>Context</CardEyebrow>
+        <CardTitle>Why this matters</CardTitle>
+        <p className="text-[13px] leading-relaxed text-slate-300">
+          AI-assisted diagnostics are moving from pilot to standard-of-care fastest in Gulf
+          health systems investing heavily in digital-transformation mandates. Radiology leads
+          adoption because imaging tools have the clearest regulatory pathway and the deepest
+          concordance evidence base. Pathology and triage are growing faster but from a smaller
+          base, with concordance still 3–5 points behind — faster reporting only matters if
+          accuracy holds under real-world load.
+        </p>
+      </Card>
+
+      {/* Section C — Who controls the rail */}
+      <Card className="border-l-2" style={{ borderLeftColor: "#F59E0B" }}>
+        <CardEyebrow>Governance</CardEyebrow>
+        <CardTitle>Who controls the rail</CardTitle>
+        <p className="text-[13px] leading-relaxed text-slate-300">
+          No single body governs this rail. The WHO sets non-binding AI-for-health ethics
+          guidance; the FDA and EU CE-mark (MDR) regime gate market entry for the underlying
+          software-as-a-medical-device; and Gulf national health authorities (UAE DoH/MOHAP,
+          Saudi SFDA, Qatar MOPH) layer their own procurement and localization rules on top.
+          Hospital clinical-governance committees make the final go-live call per use case —
+          adoption pace is set by how these approval layers stack, not by the technology alone.
+        </p>
+      </Card>
+
+      {/* Section D — Functional filters */}
+      <Card>
+        <CardEyebrow>Filters</CardEyebrow>
+        <CardTitle>Use case</CardTitle>
+        <div className="flex flex-wrap gap-2">
+          {USE_CASES.map((uc) => (
+            <Button
+              key={uc}
+              variant="outline"
+              active={activeUseCase === uc}
+              onClick={() => onChangeUseCase(uc)}
+              className="capitalize"
+            >
+              {uc}
+            </Button>
+          ))}
+        </div>
+        <p className="text-[11px] text-slate-500 mt-3">
+          Filters the deployment map to facilities with a live tool for the selected use case.
+        </p>
+      </Card>
+
+      {/* Section E — Download sample data */}
+      <Card>
+        <CardEyebrow>Export</CardEyebrow>
+        <CardTitle>Sample data</CardTitle>
+        <a href={sampleDataDownloadUrl()} download>
+          <Button variant="primary" className="w-full flex items-center justify-center gap-2 py-2">
+            <Download size={14} /> Download sample data (.json)
+          </Button>
+        </a>
+        <p className="text-[11px] text-slate-500 mt-2">
+          Full mock dataset: facilities, deployments, adoption trend, concordance, time-to-report.
+        </p>
+      </Card>
+    </aside>
+  );
+}
+</file>
+
+<file path="frontend/components/TTRGauges.tsx">
+"use client";
+
+import { useEffect, useState } from "react";
+import { TimeToReport, UseCase } from "@/lib/types";
+import { getTimeToReport } from "@/lib/api";
+import { CardEyebrow, CardTitle } from "@/components/ui/card";
+
+const UC_COLOR: Record<UseCase, string> = {
+  radiology: "#38BDF8",
+  pathology: "#F59E0B",
+  triage: "#818CF8",
+};
+const UC_LABEL: Record<UseCase, string> = {
+  radiology: "Radiology",
+  pathology: "Pathology",
+  triage: "Triage",
+};
+
+function Gauge({ value, color, label }: { value: number; color: string; label: string }) {
+  const r = 42;
+  const circumference = 2 * Math.PI * r;
+  const offset = circumference * (1 - value / 100);
+  return (
+    <div className="flex flex-col items-center gap-1">
+      <svg width={110} height={110} viewBox="0 0 110 110">
+        <circle cx="55" cy="55" r={r} stroke="#1F2937" strokeWidth="9" fill="none" />
+        <circle
+          cx="55"
+          cy="55"
+          r={r}
+          stroke={color}
+          strokeWidth="9"
+          fill="none"
+          strokeLinecap="round"
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          transform="rotate(-90 55 55)"
+          style={{ transition: "stroke-dashoffset 0.6s ease" }}
+        />
+        <text x="55" y="52" textAnchor="middle" fontSize="20" fontWeight="600" fill="#E6EDF3" fontFamily="monospace">
+          {value}%
+        </text>
+        <text x="55" y="68" textAnchor="middle" fontSize="8.5" fill="#7E97A0">
+          faster
+        </text>
+      </svg>
+      <div className="text-xs text-slate-300">{label}</div>
+    </div>
+  );
+}
+
+export default function TTRGauges() {
+  const [data, setData] = useState<TimeToReport | null>(null);
+  useEffect(() => {
+    getTimeToReport().then(setData);
+  }, []);
+
+  if (!data) return <div className="rr-card p-5 h-[200px] animate-pulse" />;
+
+  const useCases: UseCase[] = ["radiology", "pathology", "triage"];
+
+  return (
+    <div className="rr-card p-5">
+      <CardEyebrow>Turnaround</CardEyebrow>
+      <CardTitle>Time-to-report improvement</CardTitle>
+      <div className="flex justify-around flex-wrap gap-3">
+        {useCases.map((uc) => (
+          <Gauge key={uc} value={data[uc].improvement_pct} color={UC_COLOR[uc]} label={UC_LABEL[uc]} />
+        ))}
+      </div>
+      <div className="text-[11px] text-slate-500 mt-2">
+        Network-wide average: {data._network_avg_improvement_pct}% faster report turnaround with AI assistance (mock).
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="frontend/lib/api.ts">
+import {
+  FacilityCollection,
+  AdoptionTrendPoint,
+  ConcordanceRow,
+  TimeToReport,
+  CoverageRow,
+  Meta,
+  UseCase,
+  FdaRegistry,
+} from "./types";
+
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8000";
+
+async function safeFetch<T>(path: string, fallback: () => Promise<T>): Promise<T> {
+  try {
+    const res = await fetch(`${API_BASE}${path}`, { cache: "no-store" });
+    if (!res.ok) throw new Error(`API ${path} returned ${res.status}`);
+    return (await res.json()) as T;
+  } catch {
+    return fallback();
+  }
+}
+
+async function loadLocalMock() {
+  const res = await fetch("/mock_data.json");
+  return res.json();
+}
+
+export async function getMeta(): Promise<Meta> {
+  return safeFetch<Meta>("/api/meta", async () => (await loadLocalMock()).meta);
+}
+
+export async function getFacilities(useCase?: UseCase): Promise<FacilityCollection> {
+  const qs = useCase ? `?use_case=${useCase}` : "";
+  return safeFetch<FacilityCollection>(`/api/facilities${qs}`, async () => {
+    const raw = await loadLocalMock();
+    const features = raw.facilities
+      .filter((f: any) => !useCase || Boolean(f.deployments[useCase]))
+      .map((f: any) => {
+        const liveCount = Object.values(f.deployments).filter(Boolean).length;
+        return {
+          type: "Feature",
+          geometry: { type: "Point", coordinates: [f.lon, f.lat] },
+          properties: {
+            id: f.id,
+            name: f.name,
+            country: f.country,
+            city: f.city,
+            deployments: f.deployments,
+            live_use_cases: liveCount,
+            coverage_pct_of_use_cases: Math.round((liveCount / 3) * 1000) / 10,
+          },
+        };
+      });
+    return { type: "FeatureCollection", features };
+  });
+}
+
+export async function getAdoptionTrend(): Promise<AdoptionTrendPoint[]> {
+  return safeFetch<AdoptionTrendPoint[]>("/api/adoption-trend", async () => (await loadLocalMock()).adoption_trend);
+}
+
+export async function getConcordance(): Promise<ConcordanceRow[]> {
+  return safeFetch<ConcordanceRow[]>("/api/concordance", async () => {
+    const rows = (await loadLocalMock()).concordance;
+    const avg = rows.reduce((s: number, r: any) => s + r.ai, 0) / rows.length;
+    return rows.map((r: any) => ({
+      ...r,
+      gap_to_human: Math.round((r.human - r.ai) * 10) / 10,
+      delta_vs_network_avg_pts: Math.round((r.ai - avg) * 10) / 10,
+    }));
+  });
+}
+
+export async function getTimeToReport(): Promise<TimeToReport> {
+  return safeFetch<TimeToReport>("/api/time-to-report", async () => {
+    const ttr = (await loadLocalMock()).time_to_report;
+    const out: any = {};
+    const improvements: number[] = [];
+    for (const [useCase, v] of Object.entries<any>(ttr)) {
+      const pct = Math.round((1 - v.assisted_min / v.baseline_min) * 100);
+      improvements.push(pct);
+      out[useCase] = { ...v, improvement_pct: pct };
+    }
+    out._network_avg_improvement_pct = Math.round(
+      improvements.reduce((s, v) => s + v, 0) / improvements.length
+    );
+    return out;
+  });
+}
+
+export async function getCoverageMatrix(): Promise<CoverageRow[]> {
+  return safeFetch<CoverageRow[]>("/api/coverage-matrix", async () => {
+    const facilities = (await loadLocalMock()).facilities;
+    return facilities.map((f: any) => ({
+      id: f.id,
+      name: f.name,
+      country: f.country,
+      coverage: {
+        radiology: Boolean(f.deployments.radiology),
+        pathology: Boolean(f.deployments.pathology),
+        triage: Boolean(f.deployments.triage),
+      },
+    }));
+  });
+}
+
+export function sampleDataDownloadUrl(): string {
+  return `${API_BASE}/api/sample-data`;
+}
+
+export async function getFdaRegistry(specialty?: UseCase): Promise<FdaRegistry> {
+  const qs = specialty ? `?specialty=${specialty}` : "";
+  return safeFetch<FdaRegistry>(`/api/fda-registry${qs}`, async () => {
+    const res = await fetch("/fda_registry.json");
+    const raw = await res.json();
+    const devices = specialty
+      ? raw.devices.filter((d: any) => d.specialty === specialty)
+      : raw.devices;
+    return { source: raw.source, devices };
+  });
+}
+</file>
+
+<file path="frontend/lib/types.ts">
+export type UseCase = "radiology" | "pathology" | "triage";
+
+export interface FacilityProperties {
+  id: string;
+  name: string;
+  country: string;
+  city: string;
+  deployments: Record<UseCase, string | null>;
+  live_use_cases: number;
+  coverage_pct_of_use_cases: number;
+}
+
+export interface FacilityFeature {
+  type: "Feature";
+  geometry: { type: "Point"; coordinates: [number, number] };
+  properties: FacilityProperties;
+}
+
+export interface FacilityCollection {
+  type: "FeatureCollection";
+  features: FacilityFeature[];
+}
+
+export interface AdoptionTrendPoint {
+  month: string;
+  radiology: number;
+  pathology: number;
+  triage: number;
+}
+
+export interface ConcordanceRow {
+  use_case: UseCase;
+  ai: number;
+  human: number;
+  n: number;
+  gap_to_human: number;
+  delta_vs_network_avg_pts: number;
+}
+
+export interface TTREntry {
+  baseline_min: number;
+  assisted_min: number;
+  improvement_pct: number;
+}
+
+export interface TimeToReport {
+  radiology: TTREntry;
+  pathology: TTREntry;
+  triage: TTREntry;
+  _network_avg_improvement_pct: number;
+}
+
+export interface CoverageRow {
+  id: string;
+  name: string;
+  country: string;
+  coverage: Record<UseCase, boolean>;
+}
+
+export interface Meta {
+  rail: string;
+  poc_title: string;
+  sources: string[];
+  note: string;
+}
+
+export interface FdaSource {
+  name: string;
+  url: string;
+  publisher: string;
+  snapshot_note: string;
+  as_of: string;
+}
+
+export interface FdaDevice {
+  manufacturer: string;
+  product_line: string;
+  specialty: UseCase;
+  modality: string;
+}
+
+export interface FdaRegistry {
+  source: FdaSource;
+  devices: FdaDevice[];
+}
+</file>
+
+<file path="frontend/public/mock_data.json">
+{
+  "meta": {
+    "rail": "Clinical AI",
+    "poc_title": "Clinical AI Diagnostics Adoption Monitor",
+    "sources": [
+      "WHO — Ethics and Governance of Artificial Intelligence for Health",
+      "Gulf digital-health transformation reports (national digital-health strategies, UAE/KSA/Qatar)",
+      "FDA AI/ML-Enabled Medical Device List",
+      "EU CE-Mark (MDR) diagnostic device registry"
+    ],
+    "note": "All facility names are real institutions used for illustrative placement. Tool names, deployment status, concordance figures and time-to-report metrics are synthetic mock data."
+  },
+  "facilities": [
+    { "id": "f1",  "name": "Cleveland Clinic Abu Dhabi",        "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4539, "lon": 54.3773, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": null } },
+    { "id": "f2",  "name": "Sheikh Khalifa Medical City",       "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4691, "lon": 54.3838, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": "TriageNet" } },
+    { "id": "f3",  "name": "Mediclinic City Hospital",          "country": "UAE",          "city": "Dubai",     "lat": 25.2285, "lon": 55.3273, "deployments": { "radiology": "Nexus Rad", "pathology": "PathLens", "triage": "TriageNet" } },
+    { "id": "f4",  "name": "NMC Royal Hospital",                "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4830, "lon": 54.3550, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": null } },
+    { "id": "f5",  "name": "King Faisal Specialist Hospital",   "country": "Saudi Arabia", "city": "Riyadh",    "lat": 24.6877, "lon": 46.7219, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": "TriageNet" } },
+    { "id": "f6",  "name": "Dr. Sulaiman Al Habib Hospital",    "country": "Saudi Arabia", "city": "Riyadh",    "lat": 24.7020, "lon": 46.6840, "deployments": { "radiology": "Nexus Rad", "pathology": "PathLens", "triage": null } },
+    { "id": "f7",  "name": "King Abdulaziz Medical City",       "country": "Saudi Arabia", "city": "Jeddah",    "lat": 21.5000, "lon": 39.2000, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": "TriageNet" } },
+    { "id": "f8",  "name": "Hamad Medical Corporation",         "country": "Qatar",        "city": "Doha",      "lat": 25.2919, "lon": 51.5346, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": "TriageNet" } },
+    { "id": "f9",  "name": "Sidra Medicine",                    "country": "Qatar",        "city": "Doha",      "lat": 25.3200, "lon": 51.4400, "deployments": { "radiology": "Nexus Rad", "pathology": null, "triage": "TriageNet" } },
+    { "id": "f10", "name": "Salmaniya Medical Complex",         "country": "Bahrain",      "city": "Manama",    "lat": 26.2225, "lon": 50.5975, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": null } },
+    { "id": "f11", "name": "Ibn Sina Hospital",                 "country": "Kuwait",       "city": "Kuwait City","lat": 29.3697, "lon": 47.9783, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": null } },
+    { "id": "f12", "name": "Sultan Qaboos University Hospital", "country": "Oman",         "city": "Muscat",    "lat": 23.5931, "lon": 58.1704, "deployments": { "radiology": "Nexus Rad", "pathology": "PathLens", "triage": "TriageNet" } }
+  ],
+  "adoption_trend": [
+    { "month": "Jan", "radiology": 18, "pathology": 6,  "triage": 4  },
+    { "month": "Feb", "radiology": 22, "pathology": 8,  "triage": 5  },
+    { "month": "Mar", "radiology": 27, "pathology": 10, "triage": 7  },
+    { "month": "Apr", "radiology": 33, "pathology": 13, "triage": 9  },
+    { "month": "May", "radiology": 39, "pathology": 17, "triage": 12 },
+    { "month": "Jun", "radiology": 46, "pathology": 21, "triage": 16 },
+    { "month": "Jul", "radiology": 52, "pathology": 26, "triage": 21 },
+    { "month": "Aug", "radiology": 58, "pathology": 31, "triage": 27 },
+    { "month": "Sep", "radiology": 64, "pathology": 36, "triage": 33 },
+    { "month": "Oct", "radiology": 69, "pathology": 41, "triage": 39 },
+    { "month": "Nov", "radiology": 74, "pathology": 46, "triage": 45 },
+    { "month": "Dec", "radiology": 79, "pathology": 51, "triage": 51 }
+  ],
+  "concordance": [
+    { "use_case": "radiology", "ai": 94.2, "human": 96.8, "n": 41820 },
+    { "use_case": "pathology", "ai": 91.6, "human": 95.9, "n": 12340 },
+    { "use_case": "triage",    "ai": 88.3, "human": 93.1, "n": 27110 }
+  ],
+  "time_to_report": {
+    "radiology": { "baseline_min": 52, "assisted_min": 19 },
+    "pathology": { "baseline_min": 96, "assisted_min": 44 },
+    "triage":    { "baseline_min": 14, "assisted_min": 4  }
+  }
+}
+</file>
+
+<file path="frontend/types/css.d.ts">
+declare module "*.css";
+</file>
+
+<file path="frontend/.env.local.example">
+# Backend API base URL. No secret keys required — map tiles are OSM (no token),
+# per the Real Rails security guardrail (never hardcode credentials).
+NEXT_PUBLIC_API_BASE=http://localhost:8000
+</file>
+
+<file path="frontend/next-env.d.ts">
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/app/building-your-application/configuring/typescript for more information.
+</file>
+
+<file path="frontend/next.config.js">
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  env: {
+    NEXT_PUBLIC_API_BASE: process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8000",
+  },
+};
+module.exports = nextConfig;
+</file>
+
+<file path="frontend/package.json">
+{
+  "name": "real-rails-clinical-ai-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.13",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.12.7",
+    "leaflet": "^1.9.4",
+    "react-leaflet": "^4.2.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.446.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/leaflet": "^1.9.12",
+    "tailwindcss": "^3.4.10",
+    "postcss": "^8.4.45",
+    "autoprefixer": "^10.4.20"
+  }
+}
+</file>
+
+<file path="frontend/postcss.config.js">
+module.exports = {
+  plugins: { tailwindcss: {}, autoprefixer: {} },
+};
+</file>
+
+<file path="frontend/tailwind.config.ts">
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        // Clinical AI Visual DNA — deep midnight teal-charcoal (luminance < 10%)
+        obsidian: "#071A20",      // base canvas
+        surface: "#0D242B",       // panel surface
+        slateBorder: "#17323B",   // hairline borders
+        brandTeal: "#2DD4BF",     // primary chrome / glow accent
+        // Functional use-case legend colors (unchanged — meaningful, not decorative)
+        cyan: "#38BDF8",          // radiology
+        amber: "#F59E0B",         // pathology
+        indigo: "#818CF8",        // triage
+      },
+      fontFamily: {
+        sans: ["Inter", "Geist Sans", "system-ui", "sans-serif"],
+      },
+      boxShadow: {
+        "teal-glow": "0 0 0 0.5px rgba(45, 212, 191, 0.9), 0 0 14px rgba(45, 212, 191, 0.25)",
+        "cyan-glow": "0 0 0 0.5px rgba(56, 189, 248, 0.9), 0 0 12px rgba(56, 189, 248, 0.25)",
+      },
+      letterSpacing: {
+        tightest: "-0.02em",
+      },
+    },
+  },
+  plugins: [],
+};
+export default config;
+</file>
+
+<file path="frontend/tsconfig.json">
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
+    "paths": { "@/*": ["./*"] }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+</file>
+
+<file path=".gitignore">
+node_modules/
+.next/
+__pycache__/
+*.pyc
+.env
+.env.local
+dist/
+build/
+</file>
+
+<file path="README.md">
+# Real Rails — Clinical AI Diagnostics Adoption Monitor
+
+**Rail:** Clinical AI
+**Stack:** Next.js 14 (App Router, TypeScript, Tailwind, shadcn-style components) · Leaflet · Recharts · FastAPI + Pandas
+
+Deployment, concordance and time-to-report telemetry for AI-assisted radiology,
+pathology and triage across Gulf health systems. Built to the Real Rails DNA:
+obsidian/cyan fintech-terminal theme, 70/30 main-stage/sidebar layout, live
+API with an automatic mock-data fallback.
+
+## Repo layout
+
+```
+real-rails-clinical-ai/
+├── backend/                 FastAPI service
+│   ├── app/
+│   │   ├── main.py          App entrypoint, CORS
+│   │   ├── data_store.py    Pandas-based "intelligence layer" transforms
+│   │   ├── routers/rail.py  /api/* endpoints
+│   │   └── data/mock_data.json
+│   ├── requirements.txt
+│   └── .env.example
+└── frontend/                 Next.js app
+    ├── app/                  page.tsx (dashboard), layout.tsx, globals.css
+    ├── components/           MapPanel, AdoptionTrendChart, ConcordanceChart,
+    │                         TTRGauges, CoverageMatrix, Sidebar, ui/*
+    ├── lib/                  api.ts (fetch + mock fallback), types.ts
+    ├── public/mock_data.json client-side fallback copy
+    └── .env.local.example
+```
+
+## Run it
+
+**Backend**
+```bash
+cd backend
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+uvicorn app.main:app --reload --port 8000
+```
+
+**Frontend** (separate terminal)
+```bash
+cd frontend
+npm install
+cp .env.local.example .env.local
+npm run dev
+```
+
+Open http://localhost:3000. If the backend isn't running, the dashboard
+still works off the bundled mock data (Doc 4 — Mock Fallback guardrail).
+
+## API
+
+| Endpoint                | Returns |
+|--------------------------|---------|
+| `GET /api/meta`          | Rail metadata + data sources |
+| `GET /api/facilities`    | GeoJSON FeatureCollection (optional `?use_case=radiology\|pathology\|triage`) |
+| `GET /api/adoption-trend`| Monthly adoption % by use case |
+| `GET /api/concordance`   | AI vs. specialist concordance + network-average delta |
+| `GET /api/time-to-report`| Baseline vs. AI-assisted minutes + improvement % |
+| `GET /api/coverage-matrix`| Facility × use-case live/not-live grid |
+| `GET /api/sample-data`   | Full dataset, powers the sidebar download button |
+
+## Data sources (ingest targets for a production build)
+
+- WHO — Ethics and Governance of Artificial Intelligence for Health
+- Gulf digital-health transformation reports (UAE, KSA, Qatar national strategies)
+- FDA AI/ML-Enabled Medical Device List
+- EU CE-Mark (MDR) diagnostic device registry
+
+All facility names are real institutions used for illustrative map placement.
+Tool names, deployment status, concordance figures and time-to-report metrics
+are **synthetic mock data** — see `meta.note` in `mock_data.json`.
+
+## Final verification checklist (Real Rails Doc 4)
+
+- [x] Background is `#030712`
+- [x] Sidebar occupies exactly 30% width (`lg:col-span-3` of 10 on a 70/30 grid)
+- [x] Filters (Section D) update the map without a full page refresh — client-state driven fetch
+- [x] Map uses a professional projection library (Leaflet + OpenStreetMap tiles), no manual SVG/lat-lon math
+- [x] No hardcoded credentials — OSM tiles need no key; `.env.example` documents the only configurable value (frontend origin / API base)
+</file>
+
+</files>
