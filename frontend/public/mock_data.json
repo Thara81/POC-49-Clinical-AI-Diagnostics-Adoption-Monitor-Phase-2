@@ -11,17 +11,17 @@
     "note": "All facility names are real institutions used for illustrative placement. Tool names, deployment status, concordance figures and time-to-report metrics are synthetic mock data."
   },
   "facilities": [
-    { "id": "f1",  "name": "Cleveland Clinic Abu Dhabi",        "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4539, "lon": 54.3773, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": null } },
-    { "id": "f2",  "name": "Sheikh Khalifa Medical City",       "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4691, "lon": 54.3838, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": "TriageNet" } },
+    { "id": "f1",  "name": "Cleveland Clinic Abu Dhabi",        "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4539, "lon": 54.3773, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": "TriageNet" } },
+    { "id": "f2",  "name": "Sheikh Khalifa Medical City",       "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4691, "lon": 54.3838, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": "TriageNet" } },
     { "id": "f3",  "name": "Mediclinic City Hospital",          "country": "UAE",          "city": "Dubai",     "lat": 25.2285, "lon": 55.3273, "deployments": { "radiology": "Nexus Rad", "pathology": "PathLens", "triage": "TriageNet" } },
-    { "id": "f4",  "name": "NMC Royal Hospital",                "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4830, "lon": 54.3550, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": null } },
+    { "id": "f4",  "name": "NMC Royal Hospital",                "country": "UAE",          "city": "Abu Dhabi", "lat": 24.4830, "lon": 54.3550, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": "TriageNet" } },
     { "id": "f5",  "name": "King Faisal Specialist Hospital",   "country": "Saudi Arabia", "city": "Riyadh",    "lat": 24.6877, "lon": 46.7219, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": "TriageNet" } },
-    { "id": "f6",  "name": "Dr. Sulaiman Al Habib Hospital",    "country": "Saudi Arabia", "city": "Riyadh",    "lat": 24.7020, "lon": 46.6840, "deployments": { "radiology": "Nexus Rad", "pathology": "PathLens", "triage": null } },
-    { "id": "f7",  "name": "King Abdulaziz Medical City",       "country": "Saudi Arabia", "city": "Jeddah",    "lat": 21.5000, "lon": 39.2000, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": "TriageNet" } },
+    { "id": "f6",  "name": "Dr. Sulaiman Al Habib Hospital",    "country": "Saudi Arabia", "city": "Riyadh",    "lat": 24.7020, "lon": 46.6840, "deployments": { "radiology": "Nexus Rad", "pathology": "PathLens", "triage": "TriageNet" } },
+    { "id": "f7",  "name": "King Abdulaziz Medical City",       "country": "Saudi Arabia", "city": "Jeddah",    "lat": 21.5000, "lon": 39.2000, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": "TriageNet" } },
     { "id": "f8",  "name": "Hamad Medical Corporation",         "country": "Qatar",        "city": "Doha",      "lat": 25.2919, "lon": 51.5346, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": "TriageNet" } },
-    { "id": "f9",  "name": "Sidra Medicine",                    "country": "Qatar",        "city": "Doha",      "lat": 25.3200, "lon": 51.4400, "deployments": { "radiology": "Nexus Rad", "pathology": null, "triage": "TriageNet" } },
-    { "id": "f10", "name": "Salmaniya Medical Complex",         "country": "Bahrain",      "city": "Manama",    "lat": 26.2225, "lon": 50.5975, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": null } },
-    { "id": "f11", "name": "Ibn Sina Hospital",                 "country": "Kuwait",       "city": "Kuwait City","lat": 29.3697, "lon": 47.9783, "deployments": { "radiology": "RadScan AI", "pathology": null, "triage": null } },
+    { "id": "f9",  "name": "Sidra Medicine",                    "country": "Qatar",        "city": "Doha",      "lat": 25.3200, "lon": 51.4400, "deployments": { "radiology": "Nexus Rad", "pathology": "PathLens", "triage": "TriageNet" } },
+    { "id": "f10", "name": "Salmaniya Medical Complex",         "country": "Bahrain",      "city": "Manama",    "lat": 26.2225, "lon": 50.5975, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": "TriageNet" } },
+    { "id": "f11", "name": "Ibn Sina Hospital",                 "country": "Kuwait",       "city": "Kuwait City","lat": 29.3697, "lon": 47.9783, "deployments": { "radiology": "RadScan AI", "pathology": "PathLens", "triage": "TriageNet" } },
     { "id": "f12", "name": "Sultan Qaboos University Hospital", "country": "Oman",         "city": "Muscat",    "lat": 23.5931, "lon": 58.1704, "deployments": { "radiology": "Nexus Rad", "pathology": "PathLens", "triage": "TriageNet" } }
   ],
   "adoption_trend": [
